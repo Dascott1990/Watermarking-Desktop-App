@@ -13,8 +13,8 @@ body {
 
 .container {
     background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); /* Soft shadow at bottom */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer shadow for a more modern feel */
     padding: 30px;
     width: 100%;
     max-width: 600px;
@@ -23,11 +23,11 @@ body {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
     margin-bottom: 20px;
     text-align: center;
-    color: #1d1d1f;
+    color: #333;
 }
 
 /* Label Styling */
@@ -39,16 +39,17 @@ label {
     color: #333;
 }
 
-/* Bootstrap inputs and buttons */
+/* Input Fields Styling */
 input[type="text"], input[type="file"], select, input[type="number"] {
     width: 100%;
-    padding: 12px 16px;
+    padding: 12px 18px;
     margin-bottom: 20px;
-    border-radius: 12px;
+    border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 16px;
     color: #333;
     background-color: #fafafa;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 input[type="text"]:focus, input[type="file"]:focus, select:focus, input[type="number"]:focus {
@@ -59,19 +60,25 @@ input[type="text"]:focus, input[type="file"]:focus, select:focus, input[type="nu
 
 /* Button Styling */
 button {
-    width: 100%;
-    padding: 14px 20px;
+    width: auto;
+    padding: 12px 18px;
     background-color: #007aff;
     color: #fff;
     border: none;
-    border-radius: 12px;
-    font-size: 18px;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
 }
 
 button:hover {
     background-color: #005ac1;
+    transform: translateY(-2px); /* Subtle hover effect */
+}
+
+button:active {
+    transform: translateY(1px); /* Button depression effect */
 }
 
 /* Custom Positioning Section */
@@ -101,7 +108,7 @@ a:hover {
 img {
     max-width: 100%;
     border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); /* Same shadow style as container */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Same soft shadow as container */
     margin-bottom: 20px;
 }
 
@@ -116,6 +123,31 @@ img {
     flex: 1;
 }
 
+/* Adjusted download/delete buttons */
+.buttons .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #4CAF50; /* Green for download button */
+    border-radius: 8px;
+    color: white;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons .btn:hover {
+    background-color: #45a049;
+}
+
+.buttons .delete-btn {
+    background-color: #f44336; /* Red for delete button */
+}
+
+.buttons .delete-btn:hover {
+    background-color: #e53935;
+}
+
 /* Making sure the UI is responsive */
 @media (max-width: 768px) {
     .container {
@@ -124,11 +156,16 @@ img {
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     button {
-        padding: 12px 16px;
-        font-size: 16px;
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .buttons .btn, .buttons .delete-btn {
+        padding: 8px 16px;
+        font-size: 14px;
     }
 }
